@@ -58,16 +58,14 @@
               <span class="author-block">
                 <a href="https://scholar.google.com/citations?user=COw5y4EAAAAJ&hl=en" target="_blank">Shubhendu Jena</a>,</span>
                 <span class="author-block">
-                  <a href="https://ouasfi.github.io/" target="_blank">Amine Ouasfi</a>,</span>
+                  <a href="https://scholar.google.de/citations?user=OL_3LB0AAAAJ&hl=en" target="_blank">Shishir Reddy Vutukur</a>,</span>
                   <span class="author-block">
-                    <a href="https://orcid.org/0000-0002-4831-3343" target="_blank">Mae Younes</a>,</span>
-                    <span class="author-block">
-                      <a href="https://boukhayma.github.io/" target="_blank">Adnane Boukhayma</a></span>
+                    <a href="https://boukhayma.github.io/" target="_blank">Adnane Boukhayma</a></span>
                   </span>
                   </div>
 
                   <div class="is-size-3 publication-authors">
-                    <span class="author-block">INRIA<br><b>arXiv</b></span>
+                    <span class="author-block">INRIA, TUM<br><b>arXiv</b></span>
                     <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
 
@@ -132,7 +130,7 @@
       <img src="./static/teaser.png" class="center"></img>
       <div class="content has-text-justified">
         <p>
-          <b>Fast training of Sparfels.</b> Examples of reconstruction meshes obtained within <strong>3 minutes</strong> from sparse pose-free images via our method. We used here <strong>6 (left) and 3 (right) input images</strong> respectively from scenes of datasets MVImgNet and BMVS.
+          <b>Fast inference of SparSplat.</b> We present the first generalizable feed-forward 2DGS prediction model from multi-view images. It achieves state-of-the-art performance in the sparse DTU 3D reconstruction benchmark, with faster inference by several orders of magnitude compared to the competition based on volume rendering of implicit representations. Multi-view input deep features are homography-warped into the target view. A two-fold network performs Deep Multi-view Stereo and pixel-aligned 2D surface element attribute regression. Perspective accurate Gaussian Splatting of these surface elements enables real-time novel view synthesis and mesh extraction.
         </p>
       </div>
     </div>
@@ -148,7 +146,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present a method for <strong>Spar</strong>se view reconstruction with sur<strong>f</strong>ace <strong>el</strong>ement splatting that runs within 3 minutes on a consumer-grade GPU. While few methods address sparse radiance field learning from noisy or unposed sparse cameras, shape recovery remains relatively underexplored in this setting. Several radiance and shape learning test-time optimization methods address the sparse posed setting by learning data priors or using combinations of external monocular geometry priors. Differently, we propose an efficient and simple pipeline harnessing a single recent 3D foundation model. We leverage its various task heads, notably point maps and camera initializations to instantiate a bundle adjusting 2D Gaussian Splatting (2DGS) model, and image correspondences to guide camera optimization midst 2DGS training. Key to our contribution is a novel formulation of splatted color variance along rays, which can be computed efficiently. Reducing this moment in training leads to more accurate shape reconstructions. We demonstrate state-of-the-art performances in the sparse uncalibrated setting in reconstruction and novel view benchmarks based on established multi-view datasets.
+            Recovering 3D information from scenes via multi-view stereo reconstruction (MVS) and novel view synthesis (NVS) is inherently challenging, particularly in scenarios involving sparse-view setups. The advent of 3D Gaussian Splatting (3DGS) enabled real-time, photorealistic NVS. Following this, 2D Gaussian Splatting (2DGS) leveraged perspective-accurate 2D Gaussian primitive rasterization to achieve accurate geometry representation during rendering, improving 3D scene reconstruction while maintaining real-time performance. Recent approaches have tackled the problem of sparse real-time NVS using 3DGS within a generalizable, MVS-based learning framework to regress 3D Gaussian parameters. Our work extends this line of research by addressing the challenge of generalizable sparse 3D reconstruction and NVS jointly, and manages to perform successfully at both tasks. We propose an MVS-based learning pipeline that regresses 2DGS surface element parameters in a feed-forward fashion to perform 3D shape reconstruction and NVS from sparse-view images. We further show that our generalizable pipeline can benefit from preexisting foundational multi-view deep visual features. The resulting model attains <strong>state-of-the-art results on the DTU sparse 3D reconstruction benchmark in terms of Chamfer distance to ground-truth</strong>, as well as state-of-the-art NVS. It also demonstrates strong generalization on the BlendedMVS and Tanks and Temples datasets. We note that our model outperforms the prior state-of-the-art in feed-forward sparse view reconstruction based on volume rendering of implicit representations, while offering an almost <strong>2 orders of magnitude higher inference speed</strong>.
           </p>
         </div>
       </div>
@@ -171,16 +169,16 @@
             Visual comparisons on the sparse reconstruction setting of DTU dataset.
           </p>
         </div>
-        <img src="./static/mvimg.png" class="center"></img>
-        <div class="content has-text-justified">
-          <p>
-            Visual comparison of surface reconstruction results on MVImgNet dataset.
-          </p>
-        </div>
         <img src="./static/bmvs.png" class="center"></img>
         <div class="content has-text-justified">
           <p>
             Visual comparison of surface reconstruction results on BlendedMVS dataset.
+          </p>
+        </div>
+        <img src="./static/dtu_nvs.png" class="center"></img>
+        <div class="content has-text-justified">
+          <p>
+            Visual comparison of novel-view sythesis results on DTU dataset.
           </p>
         </div>
       </div>
@@ -300,9 +298,9 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@article{jena2024sparfels,
+      <pre><code>@article{jena2025sparsplat,
   title={Sparfels: Fast Reconstruction from Sparse Unposed Imagery},
-  author={Jena, Shubhendu and Ouasfi, Amine and Younes, Mae and Boukhayma, Adnane},
+  author={Jena, Shubhendu and Reddy, Shishir and Boukhayma, Adnane},
   journal={arXiv preprint arXiv:},
   year={2025}
 }</code></pre>
